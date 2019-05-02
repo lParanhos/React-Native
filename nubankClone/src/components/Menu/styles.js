@@ -2,19 +2,19 @@ import { Animated, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled(Animated.ScrollView)`
-    margin: 0 30px;
+  margin: 0 30px;
 `;
 
 export const Code = styled.View`
-padding: 10px;
-align-self: center;
-overflow: hidden;
+  padding: 10px;
+  align-self: center;
+  overflow: hidden;
 `;
 
 export const Nav = styled.View`
-    margin-top: 30px;
-    border-top-width: ${StyleSheet.hairlineWidth}px;
-    border-top-color: rgba(255, 255, 255, 0.8);
+  margin-top: 30px;
+  border-top-width: ${StyleSheet.hairlineWidth}px;
+  border-top-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const NavItem = styled.View`
@@ -23,14 +23,12 @@ export const NavItem = styled.View`
   padding: 12px 0;
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
   border-bottom-color: rgba(255, 255, 255, 0.8);
-
 `;
 
 export const NavText = styled.Text`
-font-size: 15px;
-color: #FFF;
-margin-left: 20px;
-
+  font-size: 15px;
+  color: #FFF;
+  margin-left: 20px;
 `;
 
 export const SignOutButton = styled.TouchableOpacity`

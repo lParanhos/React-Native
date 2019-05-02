@@ -1,21 +1,19 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import { Animated } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
-
 
 import Header from '~/components/Header';
 import Tabs from '~/components/Tabs';
 import Menu from '~/components/Menu';
+
 import {
-  Container, Content, Card, CardContent, CardFooter, CardHeader,
-  Title, Description, Annotation
+  Container, Content, Card, CardHeader, CardContent, CardFooter, Title, Description, Annotation,
 } from './style';
 
 export default function Main() {
-
   let offset = 0;
-  
   const translateY = new Animated.Value(0);
 
   const animatedEvent = Animated.event(
@@ -45,59 +43,57 @@ export default function Main() {
       }
 
       Animated.timing(translateY, {
-        toValue: opened ? 388 : 0,
+        toValue: opened ? 380 : 0,
         duration: 200,
         useNativeDriver: true,
       }).start(() => {
-        offset = opened ? 388 : 0;
+        offset = opened ? 380 : 0;
         translateY.setOffset(offset);
         translateY.setValue(0);
       });
     }
   }
+
   return (
-    <Container style={
-      {
-        opacity: translateY.interpolate({
-          inputRange:[0, 150],
-          outputRange: [0, 1]
-        })
-      }
-    }>
+    <Container>
       <Header />
+
       <Content>
         <Menu translateY={translateY} />
+
         <PanGestureHandler
           onGestureEvent={animatedEvent}
           onHandlerStateChange={onHandlerStateChanged}
         >
-
           <Card style={{
             transform: [{
               translateY: translateY.interpolate({
-                inputRange: [-350, 0, 388],
-                outputRange: [-50, 0, 388],
+                inputRange: [-350, 0, 380],
+                outputRange: [-50, 0, 380],
                 extrapolate: 'clamp',
               }),
             }],
-          }}>
+          }}
+          >
             <CardHeader>
               <Icon name="attach-money" size={28} color="#666" />
               <Icon name="visibility-off" size={28} color="#666" />
             </CardHeader>
             <CardContent>
-              <Title>Saldo Disponível</Title>
+              <Title>Saldo disponível</Title>
               <Description>R$ 197.611,65</Description>
             </CardContent>
             <CardFooter>
               <Annotation>
-                Transferência de R$20,00 recebida de NoobMaster  hoje ás 06:01h
-            </Annotation>
+                Transferência de R$ 20,00 recebida de NoobMaster hoje às 06:00h
+              </Annotation>
             </CardFooter>
           </Card>
         </PanGestureHandler>
+
       </Content>
+
       <Tabs translateY={translateY} />
     </Container>
-  )
+  );
 }
