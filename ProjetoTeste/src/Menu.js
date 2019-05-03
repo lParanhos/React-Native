@@ -4,11 +4,27 @@ import { createDrawerNavigator } from 'react-navigation';
 import Simples from './components/simples'
 import ParImpar from './components/ParImpar'
 import Inverter, { MegaSena } from './components/Multi'
-
+import Contador from './components/Contador';
+import Plataformas from './components/Plataformas';
+import ValidarProps from './components/ValidarProps';
+import Evento from './components/Eventos';
 // ************* Navegação entre telas *************
 
 //Passo os itens de menu e o componente que vai ser chamada
 export default createDrawerNavigator({
+    Evento: {
+        screen: Evento
+    },
+    ValidarProps: {
+        screen: () => <ValidarProps ano={18} />
+    },
+    Plataformas: {
+        screen: Plataformas
+    },
+    Contador: {
+        screen: () => <Contador numeroInicial={1000} />,
+        navigationOptions: { title: 'Contador' }
+    },
     MegaSena: {
         screen: () => <MegaSena numeros={8} />,
         //Aqui eu mudo o titulo do componente
