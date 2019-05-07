@@ -10,10 +10,15 @@ import ValidarProps from './components/ValidarProps';
 import Evento from './components/Eventos';
 import Avo from './components/ComunicacaoDireta';
 import TextoSincronizado from './components/ComunicacaoIndireta';
+import ListaFlex from './components/ListaFlex';
 // ************* Navegação entre telas *************
 
 //Passo os itens de menu e o componente que vai ser chamada
 export default createDrawerNavigator({
+    ListaFlex: {
+        screen: ListaFlex,
+        navigationOptions: { title: 'Lista Flex Box' }
+    },
     TextoSincronizado: {
         screen: TextoSincronizado,
         navigationOptions: { title: 'Texto Sincronizado' }
