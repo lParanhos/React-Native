@@ -9,10 +9,15 @@ import Plataformas from './components/Plataformas';
 import ValidarProps from './components/ValidarProps';
 import Evento from './components/Eventos';
 import Avo from './components/ComunicacaoDireta';
+import TextoSincronizado from './components/ComunicacaoIndireta';
 // ************* Navegação entre telas *************
 
 //Passo os itens de menu e o componente que vai ser chamada
 export default createDrawerNavigator({
+    TextoSincronizado: {
+        screen: TextoSincronizado,
+        navigationOptions: { title: 'Texto Sincronizado' }
+    },
     Avo: {
         screen: () => <Avo name='João' sobrenome='Silva' />
     },
