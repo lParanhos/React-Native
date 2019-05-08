@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { View, Dimensions, Image, StyleSheet } from 'react-native';
 
+import Autor from './Autor';
+
 export default class Post extends Component {
     render() {
         return (
             <View style={styles.container}>
                 <Image source={this.props.image} style={styles.image} />
+                <Autor email='bino@locolandia.com' nickname='NoobMaster' />
             </View>
         )
     }
