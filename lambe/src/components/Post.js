@@ -19,7 +19,7 @@ export default class Post extends Component {
 const styles = StyleSheet.create({
     container: {
 
-        flex: 1
+        //flex: 1
     },
     image: {
         width: Dimensions.get('window').width,

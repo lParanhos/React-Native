@@ -8,7 +8,7 @@ export default class Comments extends Component {
         let view = this.props.comments ? this.props.comments.map((item, index) => {
             return (
                 <View style={styles.commentContainer} key={index}>
-                    <Text style={styles.nickname}>{item.nickname}:</Text>
+                    <Text style={styles.nickname}>{item.nickname}: </Text>
                     <Text style={styles.comment}>{item.comment}</Text>
                 </View>
             )
@@ -25,13 +25,13 @@ export default class Comments extends Component {
 const styles = StyleSheet.create({
     container: {
         //flex: 1,
-        //  margin: 10,
+     margin: 10,
 
     },
     commentContainer: {
-        flexDirection: 'column',
+        flexDirection: 'row',
         marginTop: 5,
-        backgroundColor: '#1E90FF'
+       // backgroundColor: '#1E90FF'
     },
     nickname: {
         marginLeft: 5,
