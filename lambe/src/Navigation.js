@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Feed from './screens/Feed';
 import AddFoto from './screens/AddPhoto';
+import Profile from './screens/Profile';
 
 const MenuRoutes = {
 
@@ -27,7 +28,7 @@ const MenuRoutes = {
     },
     Profile: {
         name: 'Profile',
-        screen: Feed,
+        screen: Profile,
         navigationOptions: {
             title: 'Profile',
             tabBarIcon: ({ tintColor }) =>
