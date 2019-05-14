@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { login } from '../store/actions/user';
 import {
     View,
     Text,
@@ -7,14 +9,16 @@ import {
     TextInput
 } from 'react-native';
 
-export default class Login extends Component {
+class Login extends Component {
 
     state = {
+        name: 'Noobmaster',
         email: '',
         password: ''
     }
 
     login = () => {
+        this.props.onLogin({ ...this.state })
         this.props.navigation.navigate('Profile');
     }
 
@@ -40,21 +44,29 @@ export default class Login extends Component {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogin: user => dispatch(login(user))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login);
+
 const styles = StyleSheet.create({
-    container:{
+    container: {
         alignItems: 'center',
         justifyContent: 'center'
     },
-    buttom:{
+    buttom: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286f4'
     },
-    buttomText:{
+    buttomText: {
         fontSize: 20,
         color: '#FFF'
     },
-    input:{
+    input: {
         marginTop: 20,
         width: '90%',
         backgroundColor: '#EEE',
