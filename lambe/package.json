@@ -8,7 +8,7 @@
     "avd-open": "cd ~/Android/Sdk/tools/ &&  ./emulator -avd Pixel_2_API_27"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-gravatar": "1.0.2",
